@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Product Management Page</title>
+   <link rel="stylesheet" href="../css/admin_product.css">
+</head>
+<body>
+   <h1>Create a New Product</h1>
+   <form method="post" action="/api/1.0/admin/product" enctype="multipart/form-data">
+      <div class="container">
+         <h2><u>Basic Information</u></h2>
+         <h5 class="req">(* required)</h5>
+         <div class='box'></div>
+         <div class="box">
+            <label for="id">
+               <h5>Product ID*</h5>
+               <input required pattern="[0-9]{4,15}" maxlength="15" title="Enter number only. (At least 4 characters)"  type="text" name="product_id" id="id" />
+            </label>
+         </div>
+         <div class="box">
+            <h5>Category*</h5>
+            <select required name="category">
+               <option value=""></option>
+               <option value="women">Women</option>
+               <option value="men">Men</option>
+               <option value="accessories">Accessories</option>
+            </select>
+         </div>
+         <div class="box">
+            <label for="title">
+               <h5>Title</h5>
+               <input type="text" name="title" id="title"></input>
+            </label>
+         </div>
+         <div class="box">
+            <label for="description">
+               <h5>Description</h5>
+               <textarea name="description" id="description"></textarea>
+            </label>
+         </div>
+         <div class="box">
+            <label for="price">
+               <h5>Price*</h5>
+               <input required max="99999999" min='0' step="0.01" title="Enter positive number only." type="number" name="price" id="price" />
+            </label>
+         </div>
+         <div class="box">
+            <label for="texture">
+               <h5>Texture</h5>
+               <input type="text" name="texture" id="texture"></input>
+            </label>
+         </div>
+         <div class="box">
+            <label for="wash">
+               <h5>Wash</h5>
+               <input type="text" name="wash" id="wash"></input>
+            </label>
+         </div>
+         <div class="box">
+            <label for="place">
+               <h5>Place of Production</h5>
+               <input type="text" name="place" id="place"></input>
+            </label>
+         </div>
+         <div class="box">
+            <label for="note">
+               <h5>Note</h5>
+               <input type="text" name="note" id="note"></input>
+            </label>
+         </div>
+      </div>
+
+      <div class="sales">
+         <h2><u>Sales Information</u></h2>
+         <div class="sales_box">
+            <div class="sales_box_title ctn">
+               <h5 class='ctn_box'>Color Code*</h5>
+               <h5 class='ctn_box'>Color Name*</h5>
+               <h5 class='ctn_box'>Size*</h5>
+               <h5 class='ctn_box'>Stock*</h5>
+            </div>
+            <div class="sales_box_input ctn" id='sales_box_input'>
+               <input required pattern="[0-9a-fA-F]{6}" maxlength="6" title="Hex Code #RRGGBB" class='ctn_box' type="text" name="color_code" placeholder="FFFFFF" />
+               <input required class='ctn_box' type="text" name="color_name" placeholder="白色" />
+               <input required pattern="S|M|L|XL|F" title="S/M/L/XL/F" class='ctn_box' type="text" name="size"placeholder="S" />
+               <input required class='ctn_box' type="number" name="stock" max='9999999' placeholder="1" min='1' />
+               <button class='ctn_box add' onclick='add()'>+</button>
+               <button class='ctn_box remove' onclick='remove()'>-</button>
+            </div>
+         </div>
+      </div>
+      
+      <div class="container">
+         <h2><u>Others</u></h2>
+         <div class="box">
+            <label for="story">
+               <h5>Story</h5>
+               <textarea name="story" id="story"></textarea>
+            </label>
+         </div>
+         <div class="box image">
+            <h5>Main Image</h5>
+            <input type="file" name="main_image" id="main_image"></input>
+         </div>
+         <div class="box image">
+            <h5>Other Images</h5>
+            <input type="file" name="images" id="images" multiple></input>
+         </div>
+       </div>
+       <div class="submit">
+         <input class='submit_btn' type="submit" value="Create"></input>
+       </div>
+   </form>
+</body>
+<script src='../js/admin_product.js'></script>
+</html>

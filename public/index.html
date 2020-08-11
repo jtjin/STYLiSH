@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0&appId=606485106744129&autoLogAppEvents=1"></script>
+	<title>Stylish 2020 Spring</title>
+	<link rel="stylesheet" href="./css/common.css">
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="./css/user.css">
+</head>
+<body onload="getAllProducts(), showCartNumber()">
+   <header>
+      <div class="logo"><a href="./"><img src="imgs/logo.png" /></a></div>
+      <nav>
+			<div class="item" id="women"><a href="./?tag=women">女裝</a></div>
+			<div class="item" id="men"><a href="./?tag=men">男裝</a></div>
+			<div class="item" id="accessories"><a href="./?tag=accessories">配件</a></div>
+      </nav>
+      <div class="feature">
+			<form class="search" action='./'>
+					<input id="search_text" type="text" name='tag' />
+					<input id="search_img" type="submit" value="" />
+			</form>
+			<a href="./cart.html" class="item cart"><div id="cart-qty" class="qty"></div></a>
+			<div class="item member">
+				<button id="myBtn_2"><img src="imgs/member.png" /></button>
+			</div>
+		</div>
+   </header>
+   <div class="key_visual" id="key_visual">
+		<div class="step" id="step"></div>
+	</div>
+	<main>
+		<div class="view">
+			<div id="products" class="products"></div>
+		</div>
+	</main>
+
+	<div id="myModal_2" class="modal_2">
+		<div class="modal-content_2">
+			<div id="fb-root"></div>
+			<div class="container">
+				<div class="nav signup" id="nav_signup">Sign Up</div>
+				<div class="nav login" id="nav_login">Log In</div>
+				<!-- Signup Form -->
+				<form class="form signup-form" id="signup_form">
+					<input id="signup_name" class="input" type="text" name="name" placeholder="Your Name"><br>
+					<input id="signup_email"class="input" type="email" name="email" placeholder="Your Email Address"><br>
+					<input id="signup_password"class="input" type="password" name="password" placeholder="Choose a Password"><br>
+					<button class="btn" id="signupBtn">Create account</button>
+				</form>
+				<div class="fb" id="fb_signup_btn">
+						<button class="fb_btn" onclick="FB_signup()"><img class="fb_icon" src="imgs/fb.png"><p>Sign up with Facebook</p></button>
+				</div>
+				<!-- Login Form -->
+				<form class="form login-form" id="login_form">
+					<input id="login_email" class="input" type="email" name="email" placeholder="Email"><br>
+					<input id="login_password" class="input" type="password" name="password" placeholder="Password"><br>
+					<button class="btn" id="loginBtn">log in</button>
+				</form>
+				<div class="fb" id="fb_login_btn">
+				<button class="fb_btn" onclick="FB_login()"><img class="fb_icon" src="imgs/fb.png"><p>Log in with Facebook</p></button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="view">
+			<div class="link link-0">
+				<div class="item">關於 Stylish</div>
+				<div class="item">服務條款</div>
+				<div class="item">隱私政策</div>
+			</div>
+			<div class="link link-1">
+				<div class="item">聯絡我們</div>
+				<div class="item">FAQ</div>
+			</div>
+			<div class="social">
+				<img src="imgs/line.png" />
+				<img src="imgs/twitter.png" />
+				<img src="imgs/facebook.png" />
+			</div>
+			<div class="copyright">
+				&copy; 2020. All rights reserved.
+			</div>
+		</div>
+	</footer>
+</body>
+<script src='./js/index.js'></script>
+<script src='./js/user.js'></script>
+</html>

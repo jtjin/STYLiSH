@@ -1,0 +1,190 @@
+/* The Modal (background) */
+.modal_2 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content_2 {
+  position: fixed;
+  background-color: lightgray;
+  top: 15%;
+  left: 25%;
+  right: 25%;
+  max-height: 70%;
+  overflow: auto;
+  width: 50%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close_2 {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close_2:hover,
+.close_2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header_2 {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body_2 {padding: 2px 16px;}
+
+.modal-footer_2 {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes slideIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+ .container {
+   width: 450px;
+   margin: 30px auto;
+ }
+ 
+ .nav {
+   width: 50%;
+   background: white;
+   float: left;
+   height: 60px;
+   line-height: 60px;
+   text-align: center;
+   cursor: pointer;
+   text-transform: uppercase;
+ }
+
+ .login {
+     background: none;
+ }
+ 
+ .form {
+   background: white;
+   padding: 20px 40px 0 40px;
+   clear: both;
+   width: 100%;
+   box-sizing: border-box;
+   max-height: 450px;
+ }
+
+ .login-form {
+     display: none;
+ }
+ 
+ .form .input {
+   width: 100%;
+   padding: 20px;
+   box-sizing: border-box;
+   margin-bottom: 25px;
+   border: 2px solid #e9eaea;
+   color: #3e3e40;
+   font-size: 14px;
+   outline: none;
+ }
+ 
+ .input:focus {
+   border: 2px solid #34b3a0;
+ }
+ 
+ .btn {
+   border: none;
+   width: 100%;
+   background: #34b3a0;
+   height: 50px;
+   text-align: center;
+   line-height: 50px;
+   text-transform: uppercase;
+   color: #fff;
+   font-weight: bold;
+   letter-spacing: 1px;
+   cursor: pointer;
+   margin-bottom: 25px;
+ }
+
+.fb_btn {
+  height: 40px;
+  width: 370px;
+  background-color: #4267B2;
+  border: 0px;
+  border-radius: 5px;
+  margin: 0 40px;
+  cursor: pointer;
+}
+
+.fb_btn p {
+  display: inline-block;
+  color: white;
+  font-size: 20px;
+  line-height: 40px;
+  margin: 0 0 0 10px;
+}
+
+.fb_icon {
+  position: relative;
+  top: 3.5px;
+  height: 20px;
+  width: 20px;
+}
+
+#fb_login_btn {
+  display: none;
+}
+
+.fb {
+  background-color: white;
+  padding-bottom: 20px;
+}
+
+.message {
+  color: red;
+  background: white;
+  width: 100%;
+  height: 40px;
+  line-height: 60px;
+  float: left;
+  text-align: center;
+}

@@ -1,0 +1,180 @@
+/* main */
+main{
+	padding:20px 10px;
+}
+main>.view{
+	max-width:980px;
+}
+/* .cart */
+main .cart{
+	margin-bottom:20px;
+}
+main .cart .row{
+	box-sizing:border-box;padding:10px;width:100%;display:flex;
+	align-items:center;margin:0px auto;
+}
+main .cart>.title{
+	width:calc(100% - 20px);font-weight:bold;
+}
+main .cart>.list{
+	box-sizing:border-box;padding:10px;
+}
+main .cart .row>.variant{
+	flex:none;order:1;
+	width:300px;display:flex;line-height:1.5em;font-size:0.9em;
+}
+main .cart .row>.variant>.picture{
+	flex:none;width:100px;
+}
+main .cart .row>.variant>.picture>img{
+	width:100%;
+}
+main .cart .row>.variant>.details{
+	flex:auto;margin-left:10px;
+}
+main .cart .row>.qty{
+	flex:auto;order:3;
+}
+main .cart .row>.qty>select{
+	padding:4px;background-color:#f3f3f3;border-radius:4px;
+}
+main .cart .row>.price{
+	flex:auto;order:4;
+}
+main .cart .row>.subtotal{
+	flex:auto;order:5;
+}
+main .cart .row>.remove{
+	flex:none;order:6;
+	width:50px;cursor:pointer;
+}
+main .cart .row>.remove>img{
+	width:40px;height:40px;
+}
+main .cart>.list{
+	border:1px solid #979797;
+}
+@media (max-width:700px){
+	main .cart>.title{
+		display:none;
+	}
+	main .cart .row{
+		flex-wrap:wrap;border-bottom:1px solid #888888;padding:30px 0px;
+	}
+	main .cart .row:first-child{
+		padding-top:0px;
+	}
+	main .cart .row:last-child{
+		border-bottom-width:0px;padding-bottom:0px;
+	}
+	main .cart .row>.variant{
+		width:90%;
+	}
+	main .cart .row>.qty{
+		text-align:center;
+	}
+	main .cart .row>.qty:before{
+		content:"數量";display:block;margin-top:10px;margin-bottom:5px;
+	}
+	main .cart .row>.price{
+		text-align:center;
+	}
+	main .cart .row>.price:before{
+		content:"單價";display:block;margin-top:10px;margin-bottom:5px;
+	}
+	main .cart .row>.subtotal{
+		text-align:center;
+	}
+	main .cart .row>.subtotal:before{
+		content:"小計";display:block;margin-top:10px;margin-bottom:5px;
+	}
+	main .cart .row>.remove{
+		width:10%;align-self:flex-start;order:2;
+	}
+}
+/* .target */
+main .target{
+	background-color:#e8e8e8;display:flex;margin-bottom:20px;
+	padding:20px;
+}
+main .target>.country{
+	flex:auto;
+}
+main .target>.shipping{
+	flex:auto;
+}
+main .target span{
+	vertical-align:middle;margin-right:10px;
+}
+main .target select{
+	padding:4px;background-color:#f3f3f3;border-radius:4px;
+}
+@media (max-width:700px){
+	main .target span{
+		display:block;margin-bottom:5px;
+	}
+}
+/* .reminder */
+main .reminder{
+	line-height:1.5em;margin-bottom:20px;
+}
+/* .recipient, .payment */
+main .recipient, main .payment{
+	margin-bottom:30px;
+}
+main .recipient>.title, main .payment>.title{
+	font-weight:bold;border-bottom:1px solid #3f3a3a;
+	padding-bottom:10px;margin-bottom:15px;
+}
+main .recipient>.line, main .payment>.line{
+	display:flex;margin-bottom:15px;align-items:center;
+}
+main .recipient>.line>.text, main .payment>.line>.text{
+	flex:none;width:150px;
+}
+main .recipient>.line>.input, main .payment>.line>.input{
+	flex:auto;
+}
+main .recipient>.line>.input>label{
+	margin-right:10px;
+}
+main .recipient>.line>.input>label>.time{
+	vertical-align:middle;
+}
+main .recipient>.line>.input>input{
+	padding:5px;width:200px;border-radius:4px;border:1px solid #979797;
+}
+main .payment>.line>.input>.tpfield{
+	height:20px;padding:5px;width:200px;
+	border:1px solid #979797;border-radius:4px;
+}
+/* .confirm */
+main .confirm{
+	margin-bottom:20px;
+	padding-top:30px;border-top:1px solid #3f3a3a;
+}
+main .confirm>.row{
+	display:flex;justify-content:flex-end;align-items:center;
+	margin-bottom:15px;
+}
+main .confirm>.row>.title{
+	flex:none;width:100px;
+}
+main .confirm>.row>.confirm_price{
+	flex:none;width:120px;text-align:right;
+	font-size:1.5em;
+}
+main .confirm>.row>.confirm_price>.unit{
+	font-size:0.75em;
+}
+main .confirm>.row>.separator{
+	height:1px;background-color:#3f3a3a;width:240px;
+}
+main .confirm>.row>button{
+	width:240px;max-width:100%;padding:10px;margin-top:20px;
+	color:#ffffff;background-color:#000000;border:1px solid #979797;
+	letter-spacing:4px;font-size:inherit;cursor:pointer;
+}
+main .confirm>.row>.disabled{
+	opacity:0.25;
+}

@@ -1,0 +1,141 @@
+body {
+	font-size:16px;
+   line-height:2.5em;
+}
+h1 {
+   padding: 0;
+   margin: 10px;
+   text-align: center;
+}
+
+/* ---- Form ---- */
+
+.container {
+   max-width: 500px;
+   display: flex;
+   flex-wrap: wrap;
+   margin: 10px auto;
+   padding-bottom: 20px;
+   border: solid 1px lightgray;
+   border-radius: 8px; 
+}
+
+.box{
+   margin: 0 10px;
+   flex: 1 100%;
+}
+
+h2 {
+   height: 30px;
+   margin: 0 10px;
+   padding: 5px;
+}
+
+h5 {
+   color: rgb(75, 71, 71);
+   height: 30px;
+   margin: 0;
+   padding: 5px;
+}
+.image h5 {
+   display: inline-block;
+}
+.image input {
+   display: inline-block;
+   width: auto;
+}
+
+textarea {
+   width: 456px;
+   height: 100px;
+   margin: 0 5px;
+   padding: 5px;
+}
+input {
+   width: 456px;
+   height: 20px;
+   margin: 0 5px;
+   padding: 5px;
+}
+
+.submit {
+   text-align: center;
+}
+
+.submit_btn {
+   width: 500px;
+   height: 40px;
+   padding: 5px;
+   margin: 10px auto;
+}
+
+select {
+   height: 30px;
+   margin: 0 5px;
+}
+
+.sales {
+   height: auto;
+   max-width: 500px;
+   margin: 10px auto;
+   padding: 0;
+   border: solid 1px lightgray;
+   border-radius: 8px; 
+}
+
+.sales_box {
+   height: auto;
+   width: 470px;
+   padding: 0 5px;
+   margin: 0 10px;
+}
+
+.sales_box_title {
+   height: 30px;
+}
+
+.sales_box_title h5 {
+   display: inline-block;
+   width: 100px;
+   padding: 0;
+   margin: 0;
+}
+
+.sales_box_input {
+   display: inline-block;
+   min-height: 20px;
+   height: auto;
+   padding: 0;
+   margin: 10px 0;
+}
+
+.sales_box_input input {
+   display: inline-block;
+   width: 86px;
+   padding: 0;
+   margin: 0 10px 10px 0;
+}
+
+.add,
+.remove {
+   height: 25px;
+   width: 25px;
+   border: solid 1px lightgray;
+   border-radius: 50%; 
+}
+
+.remove {
+   margin-left: 10px;
+}
+
+
+.ctn {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.req {
+   color: red;
+   display: inline-block;
+   margin: 0 15px 0 auto;
+}

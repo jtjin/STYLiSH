@@ -1,0 +1,14 @@
+.info_block {
+   width: 50%;
+   height: 50%;
+   float: left;
+   font-family: Arial;
+}
+
+#number{
+   width: 50%;
+   margin: auto;
+   padding: 30px;
+   text-align: center;
+   font-size: 60px;
+}

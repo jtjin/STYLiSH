@@ -1,0 +1,24 @@
+.image {
+   margin: 20px auto;
+   width: 350px;
+}
+.image img {
+   display: block;
+   width: 150px;
+   height: 250px;
+   border-radius: 50%;
+   margin: 0 auto;
+}
+.name,
+.email {
+   margin: 10px auto;
+   width: 350px;
+   text-align: center;
+}
+
+.logOutBtn {
+   cursor: pointer;
+   display: block;
+   width: 100px;
+   margin: 10px auto;
+}

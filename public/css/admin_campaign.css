@@ -1,0 +1,55 @@
+body {
+   font-size:16px;
+   line-height:2.5em;
+}
+h1 {
+   padding: 0;
+   margin: 30px;
+   text-align: center;
+}
+.container {
+   max-width: 460px;
+   display: flex;
+   flex-wrap: wrap;
+   margin: 10px auto;
+   padding: 20px 5px;
+   border: solid 1px lightgray;
+   border-radius: 8px; 
+}
+
+.box{
+   min-height: 50px;
+   margin: 0 10px;
+   flex: 1 100%;
+}
+h3 {
+   display: inline-block;
+   font-size: 1.25rem;
+   margin: 5px 10px;
+}
+.submit {
+   text-align: center;
+}
+
+.submit_btn {
+   width: 472px;
+   height: 40px;
+   padding: 5px;
+   margin: 10px auto;
+}
+input {
+   width: 300px;
+   height: 25px;
+}
+textarea {
+   width: 410px;
+   height: 100px;
+   margin-left: 10px;
+}
+.story {
+   display: block;
+}
+select {
+   width: 300px;
+   height: 30px;
+}

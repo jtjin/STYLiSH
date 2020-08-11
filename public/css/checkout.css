@@ -1,0 +1,149 @@
+/* The Modal (background) */
+.modal {
+   display: none; /* Hidden by default */
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Sit on top */
+   left: 0;
+   top: 0;
+   width: 100%; /* Full width */
+   height: 100%; /* Full height */
+   overflow: auto; /* Enable scroll if needed */
+   background-color: rgb(0,0,0); /* Fallback color */
+   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+   -webkit-animation-name: fadeIn; /* Fade in the background */
+   -webkit-animation-duration: 0.4s;
+   animation-name: fadeIn;
+   animation-duration: 0.4s
+ }
+ 
+ /* Modal Content */
+ .modal-content {
+   position: fixed;
+   background-color: #fefefe;
+   top: 10%;
+   left: 20%;
+   right: 20%;
+   height: 80%;
+   overflow: auto;
+   width: 60%;
+   -webkit-animation-name: slideIn;
+   -webkit-animation-duration: 0.4s;
+   animation-name: slideIn;
+   animation-duration: 0.4s
+ }
+ 
+ /* The Close Button */
+ .close {
+   color: black;
+   font-size: 28px;
+   font-weight: bold;
+ }
+ 
+ .close:hover,
+ .close:focus {
+   color: #000;
+   text-decoration: none;
+   cursor: pointer;
+ }
+ 
+ .modal-header {
+    padding: 5px 16px;
+    background-color: #E8E8E8;
+    color:black;
+    display: flex;
+    justify-content: space-between
+  }
+ 
+  .country {
+    margin: auto 0;
+  }
+  .modal-body {padding: 5px 16px;}
+  
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+ 
+ /* Add Animation */
+ @-webkit-keyframes slideIn {
+   from {opacity: 0} 
+   to {opacity: 1}
+ }
+ 
+ @keyframes slideIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+ }
+ 
+ @-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+ }
+ 
+ @keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+ }
+ 
+ /* .recipient, .payment */
+ main .recipient, main .payment{
+    margin-bottom:30px;
+ }
+ main .recipient>.title, main .payment>.title{
+    font-weight:bold;border-bottom:1px solid #3f3a3a;
+    padding-bottom:10px;margin-bottom:15px;
+ }
+ main .recipient>.line, main .payment>.line{
+    display:flex;margin-bottom:15px;align-items:center;
+ }
+ main .recipient>.line>.text, main .payment>.line>.text{
+    flex:none;width:150px;
+ }
+ main .recipient>.line>.input, main .payment>.line>.input{
+    flex:auto;
+ }
+ main .recipient>.line>.input>label{
+    margin-right:10px;
+ }
+ main .recipient>.line>.input>label>.time{
+    vertical-align:middle;
+ }
+ main .recipient>.line>.input>input{
+    padding:5px;width:200px;border-radius:4px;border:1px solid #979797;
+ }
+ main .payment>.line>.input>.tpfield{
+    height:20px;padding:5px;width:200px;
+    border:1px solid #979797;border-radius:4px;
+ }
+ 
+ /* .confirm */
+ main .confirm{
+    margin-bottom:20px;
+    padding-top:30px;border-top:1px solid #3f3a3a;
+ }
+ main .confirm>.row{
+    display:flex;justify-content:flex-end;align-items:center;
+    margin-bottom:15px;
+ }
+ main .confirm>.row>.title{
+    flex:none;width:100px;
+ }
+ main .confirm>.row>.price{
+    flex:none;width:120px;text-align:right;
+    font-size:1.5em;
+ }
+ main .confirm>.row>.price>.unit{
+    font-size:0.75em;
+ }
+ main .confirm>.row>.separator{
+    height:1px;background-color:#3f3a3a;width:240px;
+ }
+ main .confirm>.row>button{
+    width:240px;max-width:100%;padding:10px;margin-top:20px;
+    color:#ffffff;background-color:#000000;border:1px solid #979797;
+    letter-spacing:4px;font-size:inherit;cursor:pointer;
+ }
+ main .confirm>.row>button:disabled{
+    opacity:0.25;
+ }

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://js.tappaysdk.com/tpdirect/v5.2.0"></script>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0&appId=606485106744129&autoLogAppEvents=1"></script>
+	<title>Stylish 產品資訊</title>
+   <link rel="stylesheet" href="./css/common.css">
+	<link rel="stylesheet" href="./css/product.css">
+	<link rel="stylesheet" href="./css/checkout.css">
+	<link rel="stylesheet" href="./css/user.css">
+</head>
+<body onload="getProductId(), showCartNumber()">
+   <header>
+      <div class="logo"><a href="./"><img src="imgs/logo.png" /></a></div>
+      <nav>
+			<div class="item" id="women"><a href="./?tag=women">女裝</a></div>
+			<div class="item" id="men"><a href="./?tag=men">男裝</a></div>
+			<div class="item" id="accessories"><a href="./?tag=accessories">配件</a></div>
+      </nav>
+      <div class="feature">
+			<form class="search" action='./'>
+				<input id="search_text" type="text" name='tag' />
+				<input id="search_img" type="submit" value="" />
+			</form>
+			<a href="./cart.html" class="item cart"><div id="cart-qty" class="qty"></div></a>
+			<div class="item member">
+				<button id="myBtn_2"><img src="imgs/member.png" /></button>
+			</div>
+		</div>
+   </header>
+   <main>
+		<div class="view">
+			<div id="product-main-image"class="main-image"></div>
+			<div class="details">
+				<div id="product-name" class="name"></div>
+				<div id="product-id" class="id"></div>
+				<div id="product-price" class="price"></div>
+				<div id="product-colors" class="colors">
+               <span class="title">顏色 &nbsp; |</span>
+				</div>
+				<div id="product-sizes" class="sizes">
+               <span class="title">尺寸 &nbsp; |</span>
+				</div>
+				<div class="qty">
+					<span class="title">數量 &nbsp; |</span>
+					<div id="product-qty" class="chooser">
+						<div onclick="down()" class="op" data-value="-1">-</div>
+						<div id="value" class="value"></div>
+						<div onclick="up()" class="op" data-value="1">+</div>
+					</div>
+				</div>
+				<div class="add-cart">
+					<button id="product-add-cart-btn-2" onclick="clickAddCart()">加入購物車</button>
+					<button id="checkout-btn">直接購買</button>
+				</div>
+				<div id="product-summary" class="summary"></div>
+			</div>
+			<div class="separator">
+				<div class="title">更多產品資訊</div>
+				<div class="line"></div>
+			</div>
+			<div class="description">
+				<div class="story" id="product-story"></div>
+				<div class="images" id="product-images"></div>
+			</div>
+		</div>
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="country">
+						<span class="text">配送國家</span>
+						<select>
+							<option>台灣或離島</option>
+						</select>
+					</div>
+					<div class="country">
+						<span class="text">付款方式</span>
+						<select>
+							<option>信用卡付款</option>
+						</select>
+					</div>
+					<div class="close">&times;</div>
+				</div>
+				<div class="modal-body">
+					<div class="recipient">
+						<div class="title">收件資料</div>
+						<div class="line">
+							<div class="text">收件人姓名</div>
+							<div class="input">
+								<input type="text" id="recipient-name" />
+							</div>
+						</div>
+						<div class="line">
+							<div class="text">Email</div>
+							<div class="input">
+								<input type="email" id="recipient-email" />
+							</div>
+						</div>
+						<div class="line">
+							<div class="text">手機號碼</div>
+							<div class="input">
+								<input type="text" id="recipient-phone" />
+							</div>
+						</div>
+						<div class="line">
+							<div class="text">收件地址</div>
+							<div class="input">
+								<input type="text" id="recipient-address" />
+							</div>
+						</div>
+						<div class="line">
+							<div class="text">配送時間</div>
+							<div class="input">
+								<label><input type="radio" value="morning" name="recipient-time" /><span class="time"> 08:00 - 12:00</span></label>
+								<label><input type="radio" value="afternoon" name="recipient-time" /><span class="time"> 14:00 - 18:00</span></label>
+								<label><input type="radio" value="anytime" name="recipient-time" checked /><span class="time"> 不指定</span></label>
+							</div>
+						</div>
+					</div>
+					<div class="payment">
+						<div class="title">付款資料</div>
+						<div class="line">
+							<div class="text">信用卡號碼</div>
+							<div class="input">
+								<div class="tpfield" id="card-number"></div>
+							</div>
+						</div>
+						<div class="line">
+							<div class="text">有效期限</div>
+							<div class="input">
+								<div class="tpfield" id="card-expiration-date"></div>
+							</div>
+						</div>
+						<div class="line">
+							<div class="text">安全碼</div>
+							<div class="input">
+								<div class="tpfield" id="card-ccv"></div>
+							</div>
+						</div>
+					</div>
+					<div class="confirm">
+						<div class="row">
+							<div class="title">總金額</div>
+							<div class="price"><span class="unit">NT. </span><span id="subtotal"></span></div>
+						</div>
+						<div class="row">
+							<div class="title">運費</div>
+							<div class="price"><span class="unit">NT. </span><span id="freight"></span></div>
+						</div>
+						<div class="row">
+							<div class="separator"></div>
+						</div>
+						<div class="row">
+							<div class="title">應付金額</div>
+							<div class="price"><span class="unit">NT. </span><span id="total"></span></div>
+						</div>
+						<div class="row">
+							<button id="checkout" onclick="checkout()">確認付款</button>
+						</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<div id="myModal_2" class="modal_2">
+		<div class="modal-content_2">
+			<div id="fb-root"></div>
+			<div class="container">
+				<div class="nav signup" id="nav_signup">Sign Up</div>
+				<div class="nav login" id="nav_login">Log In</div>
+				<!-- Signup Form -->
+				<form class="form signup-form" id="signup_form">
+					<input id="signup_name" class="input" type="text" name="name" placeholder="Your Name"><br>
+					<input id="signup_email"class="input" type="email" name="email" placeholder="Your Email Address"><br>
+					<input id="signup_password"class="input" type="password" name="password" placeholder="Choose a Password"><br>
+					<button class="btn" id="signupBtn">Create account</button>
+				</form>
+				<div class="fb" id="fb_signup_btn">
+						<button class="fb_btn" onclick="FB_signup()"><img class="fb_icon" src="imgs/fb.png"><p>Sign up with Facebook</p></button>
+				</div>
+				<!-- Login Form -->
+				<form class="form login-form" id="login_form">
+					<input id="login_email" class="input" type="email" name="email" placeholder="Email"><br>
+					<input id="login_password" class="input" type="password" name="password" placeholder="Password"><br>
+					<button class="btn" id="loginBtn">log in</button>
+				</form>
+				<div class="fb" id="fb_login_btn">
+				<button class="fb_btn" onclick="FB_login()"><img class="fb_icon" src="imgs/fb.png"><p>Log in with Facebook</p></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="view">
+			<div class="link link-0">
+				<div class="item">關於 Stylish</div>
+				<div class="item">服務條款</div>
+				<div class="item">隱私政策</div>
+			</div>
+			<div class="link link-1">
+				<div class="item">聯絡我們</div>
+				<div class="item">FAQ</div>
+			</div>
+			<div class="social">
+				<img src="imgs/line.png" />
+				<img src="imgs/twitter.png" />
+				<img src="imgs/facebook.png" />
+			</div>
+			<div class="copyright">
+				&copy; 2020. All rights reserved.
+			</div>
+		</div>
+	</footer>
+</body>
+<script src='./js/product.js'></script>
+<script src='./js/user.js'></script>
+<script src='./js/checkout.js'></script>
+</html>

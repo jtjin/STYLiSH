@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Dashboard</title>
+   <link rel="stylesheet" href="../css/admin_dashboard.css">
+   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+</head>
+<body>
+   <div id="count" class="info_block">
+      <div id="number"></div>
+  </div>
+  <div id="pie" class="info_block"></div>
+  <div id="histogram" class="info_block"></div>
+  <div id="bar" class="info_block"></div>
+</body>
+<script src='../js/admin_dashboard.js'></script>
+<script>
+   async function main() {
+      const result = await fetch('/api/1.0/admin/dashboard').then((res) => res.json())
+      dashboard = new Dashboard(result)
+      dashboard.onlineUserCount();
+      dashboard.drawProductsDivideByColor();
+      dashboard.drawProductsInPriceRange();
+      dashboard.drawTop5ProductsDividedBySize();
+   }
+   main()
+   const socket = io();
+   socket.on('someone_paid', (msg) => {
+      main()
+      console.log(msg)
+   })
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Stylish Campaign Management</title>
+   <link rel="stylesheet" href="../css/admin_campaign.css">
+</head>
+<body onload="createProductList()">
+   <h1 id="header">Create a New Campaign</h1>
+   <form method="post" action="/api/1.0/admin/campaign" enctype="multipart/form-data" id="form">
+      <div class="container">
+         <div class="box">
+            <label for="id">
+               <h3>Product ID</h3>
+               <select required class="productID" id="productID" name="product_id">
+                  <option value=""></option>
+               </select>
+            </label>
+         </div>
+         <div class="box" id="picture">
+            <h3>Picture</h3>
+            <input type="file" name="picture"></input>
+         </div>
+         <div class="box">
+            <label for="story">
+               <h3 class="story">Story</h3>
+               <textarea name="story" id="story"></textarea>
+            </label>
+         </div>
+       </div>
+       <div class="submit">
+         <input class='submit_btn' type="submit" value="Create"></input>
+      </div>
+   </form>
+</body>
+<script src='../js/admin_campaign.js'></script>
+</html>

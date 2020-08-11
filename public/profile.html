@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0&appId=606485106744129&autoLogAppEvents=1"></script>
+	<title>Stylish 個人資訊</title>
+   <link rel="stylesheet" href="./css/common.css">
+   <link rel="stylesheet" href="./css/profile.css">
+</head>
+<body onload="getProfile(), showCartNumber()">
+   <header>
+      <div class="logo"><a href="./"><img src="imgs/logo.png" /></a></div>
+      <nav>
+			<div class="item"><a href="./?tag=women">女裝</a></div>
+			<div class="item"><a href="./?tag=men">男裝</a></div>
+			<div class="item"><a href="./?tag=accessories">配件</a></div>
+      </nav>
+      <div class="feature">
+			<form class="search" action='./'>
+				<input id="search_text" type="text" name='tag' />
+				<input id="search_img" type="submit" value="" />
+			</form>
+			<a href="./cart.html" class="item cart"><div id="cart-qty" class="qty"></div></a>
+			<div class="item member">
+				<button id="myBtn_2"><img src="imgs/member.png" /></button>
+			</div>
+		</div>
+   </header>
+   <main>
+      <div id="image" class="image"></div>
+      <div id="name" class="name"></div>
+      <div id="email" class="email"></div>
+      <button class="logOutBtn" onclick="logOut()">Log Out</button>
+   </main>
+	<footer>
+		<div class="view">
+			<div class="link link-0">
+				<div class="item">關於 Stylish</div>
+				<div class="item">服務條款</div>
+				<div class="item">隱私政策</div>
+			</div>
+			<div class="link link-1">
+				<div class="item">聯絡我們</div>
+				<div class="item">FAQ</div>
+			</div>
+			<div class="social">
+				<img src="imgs/line.png" />
+				<img src="imgs/twitter.png" />
+				<img src="imgs/facebook.png" />
+			</div>
+			<div class="copyright">
+				&copy; 2020. All rights reserved.
+			</div>
+		</div>
+	</footer>
+</body>
+<script src='./js/profile.js'></script>
+</html>
