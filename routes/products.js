@@ -92,6 +92,10 @@ router.get('/products/:category', async (req, res, next) => {
         products[i].variants[j].stock = parseInt(products[i].variants[j].stock);
       }
       products[i].images = JSONParse(products[i].images);
+      for (let k = 0; k<products[i].images.length;k++) {
+        products[i].images[k] = `/assets/${products[i].id}/${products[i].images[k]}`;
+      }
+      products[i].main_image = `/assets/${products[i].id}/${products[i].main_image}`;
     }
 
     if (req.params.category == 'details') {

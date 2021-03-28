@@ -19,11 +19,17 @@ router.use(bodyParser.urlencoded({ extended: false }));
 // Get createArray functions
 const fn = require('../modules/create_array_fn');
 
-// Get uploadImages functions
-const { uploadS3 } = require('../modules/upload_images');
+// // Get uploadImages functions
+// const { uploadS3 } = require('../modules/upload_images');
 
-const upload_product_images = uploadS3.fields([{ name: 'main_image' }, { name: 'images' }]);
-const upload_campaign_images = uploadS3.single('picture');
+// const upload_product_images = uploadS3.fields([{ name: 'main_image' }, { name: 'images' }]);
+// const upload_campaign_images = uploadS3.single('picture');
+
+// Get uploadImages functions
+const { upload } = require('../modules/upload_images');
+
+const upload_product_images = upload.fields([{ name: 'main_image' }, { name: 'images' }]);
+const upload_campaign_images = upload.single('picture');
 
 // POST at Product Management Page
 router.post('/admin/product', upload_product_images, async (req, res, next) => {
@@ -50,7 +56,8 @@ router.post('/admin/product', upload_product_images, async (req, res, next) => {
     // Create mainImageUrl
     let mainImageUrl = '';
     if (req.files.main_image !== undefined) {
-      mainImageUrl = IP + req.files.main_image[0].key;
+      // mainImageUrl = IP + req.files.main_image[0].key;
+      mainImageUrl = req.files.main_image[0].filename;
     }
     // Create imagesUrlArr
     let imagesUrlArr = '';
@@ -97,7 +104,8 @@ router.post('/admin/campaign', upload_campaign_images, async (req, res, next) =>
     // Create pictureUrl
     let pictureUrl = '';
     if (req.file !== undefined) {
-      pictureUrl = IP + req.file.key;
+      // pictureUrl = IP + req.file.key;
+      pictureUrl = req.file.filename;
     }
     // Add it into campaign table
     const addCampaign = {

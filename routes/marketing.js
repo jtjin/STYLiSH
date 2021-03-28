@@ -24,6 +24,9 @@ router.get('/marketing/campaigns', async (req, res, next) => {
 
     // If cacheCampaigns not exists, get campaigns from DB and set it in redis
     const campaigns = await mysql.query('SELECT * FROM campaign', []);
+    for (let i = 0; i < campaigns.length; i += 1) {
+      campaigns[i].picture = `/assets/${campaigns[i].product_id}/${campaigns[i].picture}`;
+    }
     res.json({ data: campaigns });
 
     if (redis.client.ready) {

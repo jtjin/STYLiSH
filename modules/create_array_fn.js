@@ -52,7 +52,8 @@ function createVariantsArray(code, size, stock) {
 function createImagesUrlArray(images) {
   const imagesUrlArr = [];
   for (let i = 0; i < images.length; i += 1) {
-    const imagesUrl = IP + images[i].key;
+    // const imagesUrl = IP + images[i].key;
+    const imagesUrl = images[i].filename;
     imagesUrlArr.push(imagesUrl);
   }
   return JSON.stringify(imagesUrlArr);
