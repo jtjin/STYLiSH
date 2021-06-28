@@ -1,10 +1,10 @@
 ### Host Name
 
-https://stylish.jtjin.xyz/
+https://stylish.jian-ting.com
 
 ### Dashboard Link
 
-https://stylish.jtjin.xyz/admin/dashboard.html
+https://stylish.jian-ting.com/admin/dashboard.html
 
 
 
